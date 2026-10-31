@@ -1,0 +1,1711 @@
+/* ==========================================================================
+   2. AY HEDİYESİ - ROMANTİK WEB SİTESİ STİLLERİ
+   Tasarım: Lüks Gül Kurusu, Gece Moru & Şampanya Altını
+   ========================================================================== */
+
+:root {
+  --bg-dark: #0a040b;
+  --bg-gradient: radial-gradient(circle at 50% 20%, #270f25 0%, #120614 60%, #070208 100%);
+  --card-bg: rgba(28, 14, 29, 0.65);
+  --card-border: rgba(255, 182, 193, 0.18);
+  --card-border-hover: rgba(255, 182, 193, 0.45);
+  --glass-glow: 0 12px 40px rgba(224, 102, 133, 0.15);
+  
+  --primary-rose: #e06685;
+  --primary-rose-light: #ffb7c5;
+  --primary-rose-dark: #8c1d40;
+  --gold-accent: #e5c378;
+  --gold-glow: rgba(229, 195, 120, 0.3);
+  
+  --text-main: #fcf6f7;
+  --text-muted: #d4b5bd;
+  --text-dim: #997883;
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-calligraphy: 'Great Vibes', cursive;
+  --font-display: 'Cinzel Decorative', serif;
+  --font-ui: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  
+  --transition-smooth: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset & Temel Ayarlar */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  font-family: var(--font-ui);
+  background-color: var(--bg-dark);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-main);
+  min-height: 100vh;
+  overflow-x: hidden;
+  max-width: 100%;
+  line-height: 1.6;
+  position: relative;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Arka Plan Kalp Parçacıkları Tuvali */
+#heartCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Hızlı Erişim / Gezinme Butonları */
+.quick-nav {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  z-index: 100;
+  display: flex;
+  gap: 12px;
+}
+
+.pill-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 18px;
+  background: rgba(30, 14, 28, 0.75);
+  border: 1px solid var(--card-border);
+  border-radius: 50px;
+  color: var(--text-main);
+  font-family: var(--font-ui);
+  font-size: 0.88rem;
+  font-weight: 500;
+  cursor: pointer;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.pill-btn:hover {
+  background: rgba(50, 20, 45, 0.9);
+  border-color: var(--primary-rose-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 25px rgba(224, 102, 133, 0.3);
+}
+
+.pill-btn-primary {
+  background: linear-gradient(135deg, rgba(224, 102, 133, 0.35), rgba(140, 29, 64, 0.45));
+  border-color: rgba(255, 182, 193, 0.4);
+}
+
+.pill-btn-primary:hover {
+  background: linear-gradient(135deg, rgba(224, 102, 133, 0.55), rgba(140, 29, 64, 0.65));
+}
+
+/* Ana Konteyner */
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 40px 24px 100px;
+}
+
+/* ==========================================================================
+   HERO & SAYAÇ BÖLÜMÜ
+   ========================================================================== */
+.hero-section {
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 60px 0 40px;
+}
+
+.anniversary-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 24px;
+  background: rgba(224, 102, 133, 0.12);
+  border: 1px solid rgba(224, 102, 133, 0.3);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary-rose-light);
+  margin-bottom: 24px;
+  animation: fadeInDown 1s ease;
+  box-shadow: 0 0 20px rgba(224, 102, 133, 0.15);
+}
+
+.hero-title {
+  font-size: clamp(2.4rem, 6vw, 4.2rem);
+  line-height: 1.15;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.hero-title .calligraphy {
+  display: block;
+  font-family: var(--font-calligraphy);
+  font-size: clamp(3rem, 8vw, 5.5rem);
+  font-weight: normal;
+  color: var(--primary-rose-light);
+  text-shadow: 0 0 30px rgba(224, 102, 133, 0.4);
+}
+
+.hero-title .highlight {
+  font-family: var(--font-serif);
+  background: linear-gradient(135deg, #ffffff 30%, #ffd1dc 70%, #e5c378 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  letter-spacing: -0.5px;
+}
+
+.hero-subtitle {
+  max-width: 680px;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  margin-bottom: 40px;
+  font-weight: 300;
+  line-height: 1.7;
+}
+
+/* Sayaç Kartı */
+.counter-card {
+  position: relative;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: 40px 48px;
+  width: 100%;
+  max-width: 780px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: var(--glass-glow), 0 20px 50px rgba(0, 0, 0, 0.5);
+  transition: var(--transition-smooth);
+}
+
+.counter-card:hover {
+  border-color: var(--card-border-hover);
+  box-shadow: 0 15px 50px rgba(224, 102, 133, 0.25);
+}
+
+.heartbeat-pulse {
+  width: 56px;
+  height: 56px;
+  margin: -68px auto 16px;
+  background: linear-gradient(135deg, #e06685, #b31d45);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  box-shadow: 0 0 25px rgba(224, 102, 133, 0.7);
+  animation: pulseBeat 1.4s ease-in-out infinite;
+}
+
+.heart-svg {
+  width: 28px;
+  height: 28px;
+}
+
+@keyframes pulseBeat {
+  0% { transform: scale(1); box-shadow: 0 0 20px rgba(224, 102, 133, 0.6); }
+  14% { transform: scale(1.15); box-shadow: 0 0 35px rgba(224, 102, 133, 0.9); }
+  28% { transform: scale(1); box-shadow: 0 0 20px rgba(224, 102, 133, 0.6); }
+  42% { transform: scale(1.2); box-shadow: 0 0 40px rgba(224, 102, 133, 1); }
+  70% { transform: scale(1); box-shadow: 0 0 20px rgba(224, 102, 133, 0.6); }
+}
+
+.counter-caption {
+  font-size: 1rem;
+  color: var(--primary-rose-light);
+  margin-bottom: 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+.counter-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 30px;
+}
+
+.counter-box {
+  background: rgba(45, 18, 42, 0.6);
+  border: 1px solid rgba(255, 182, 193, 0.15);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  min-width: 110px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.05);
+  transition: var(--transition-smooth);
+}
+
+.counter-box:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 182, 193, 0.4);
+}
+
+.counter-box .number {
+  font-family: var(--font-serif);
+  font-size: 2.8rem;
+  font-weight: 700;
+  line-height: 1;
+  color: #fff;
+  text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.counter-box .unit {
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--gold-accent);
+  margin-top: 8px;
+}
+
+.counter-colon {
+  font-size: 2.2rem;
+  color: var(--primary-rose-light);
+  opacity: 0.7;
+  font-family: var(--font-serif);
+  animation: blink 1s ease-in-out infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 0.8; }
+  50% { opacity: 0.2; }
+}
+
+.counter-footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255, 182, 193, 0.1);
+}
+
+.stat-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50px;
+  font-size: 0.86rem;
+  color: var(--text-muted);
+}
+
+.highlight-pill {
+  background: rgba(229, 195, 120, 0.15);
+  border: 1px solid rgba(229, 195, 120, 0.35);
+  color: var(--gold-accent);
+  font-weight: 600;
+}
+
+.scroll-down-hint {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.mouse-icon {
+  width: 22px;
+  height: 36px;
+  border: 2px solid rgba(255, 182, 193, 0.3);
+  border-radius: 12px;
+  position: relative;
+}
+
+.mouse-icon .wheel {
+  width: 4px;
+  height: 8px;
+  background: var(--primary-rose-light);
+  border-radius: 2px;
+  position: absolute;
+  top: 6px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: mouseWheel 2s infinite;
+}
+
+@keyframes mouseWheel {
+  0% { transform: translate(-50%, 0); opacity: 1; }
+  100% { transform: translate(-50%, 14px); opacity: 0; }
+}
+
+/* ==========================================================================
+   ORTAK BÖLÜM STİLLERİ
+   ========================================================================== */
+.section {
+  padding: 90px 0 50px;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.section-tag {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+  margin-bottom: 10px;
+}
+
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 12px;
+}
+
+.section-desc {
+  max-width: 620px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   BİZİM KÖŞEMİZ - 6 FOTOĞRAF KUTUSU (TEMİZ & LÜKS ÇERÇEVE)
+   ========================================================================== */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+@media (max-width: 900px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+}
+
+@media (max-width: 580px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  .photo-card {
+    padding: 6px;
+    border-radius: 12px;
+  }
+}
+
+@media (max-width: 320px) {
+  .photo-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+}
+
+.photo-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  padding: 10px;
+  background: rgba(35, 17, 36, 0.6);
+  border: 1px solid var(--card-border);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.4), 0 0 20px rgba(224, 102, 133, 0.08);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.4s ease, border-color 0.4s ease;
+  overflow: hidden;
+}
+
+.photo-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  border-color: var(--primary-rose-light);
+  box-shadow: 0 24px 50px rgba(224, 102, 133, 0.25), 0 4px 15px rgba(0, 0, 0, 0.4);
+}
+
+.photo-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: calc(var(--radius-md) - 4px);
+  overflow: hidden;
+  background: #1a0b1c;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.photo-card:hover .gallery-photo {
+  transform: scale(1.06);
+}
+
+/* ==========================================================================
+   BİZİM ŞARKIMIZ - VİNTAGE PİKAP VE OYNATICI
+   ========================================================================== */
+.vinyl-player-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  display: flex;
+  align-items: center;
+  gap: 48px;
+  box-shadow: var(--glass-glow), 0 20px 50px rgba(0, 0, 0, 0.6);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (max-width: 768px) {
+  .vinyl-player-card {
+    flex-direction: column;
+    padding: 30px 24px;
+    gap: 32px;
+    text-align: center;
+  }
+}
+
+/* Pikap & Dönen Plak */
+.turntable-wrapper {
+  position: relative;
+  width: 220px;
+  height: 220px;
+  flex-shrink: 0;
+}
+
+.vinyl-disc {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: radial-gradient(circle at center, #111 25%, #222 55%, #050505 100%);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.8), inset 0 0 10px rgba(255, 255, 255, 0.1);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.5s ease;
+}
+
+.vinyl-disc.spinning {
+  animation: spinVinyl 3.5s linear infinite;
+}
+
+@keyframes spinVinyl {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.vinyl-grooves {
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 
+    inset 0 0 0 12px rgba(0, 0, 0, 0.6),
+    inset 0 0 0 13px rgba(255, 255, 255, 0.06),
+    inset 0 0 0 26px rgba(0, 0, 0, 0.7),
+    inset 0 0 0 27px rgba(255, 255, 255, 0.06),
+    inset 0 0 0 42px rgba(0, 0, 0, 0.8),
+    inset 0 0 0 43px rgba(255, 255, 255, 0.06);
+}
+
+.vinyl-center {
+  width: 82px;
+  height: 82px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #d44d70, #801032);
+  border: 3px solid #e5c378;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.vinyl-label {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  line-height: 1.1;
+}
+
+.vinyl-label-title {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.vinyl-label-sub {
+  font-size: 0.55rem;
+  color: var(--gold-accent);
+}
+
+.vinyl-heart {
+  font-size: 0.7rem;
+  margin-top: 2px;
+}
+
+/* Pikap Kolu (Tonearm) */
+.turntable-tonearm {
+  position: absolute;
+  top: -8px;
+  right: -10px;
+  width: 40px;
+  height: 90px;
+  pointer-events: none;
+  transform-origin: 30px 10px;
+  transform: rotate(-30deg);
+  transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 5;
+}
+
+.turntable-tonearm.active {
+  transform: rotate(10deg);
+}
+
+.tonearm-base {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #c5a059;
+  border: 2px solid #5a401c;
+  position: absolute;
+  right: 5px;
+  top: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.tonearm-stick {
+  width: 4px;
+  height: 75px;
+  background: linear-gradient(to right, #ccc, #888);
+  position: absolute;
+  right: 12px;
+  top: 10px;
+  border-radius: 2px;
+}
+
+.tonearm-head {
+  width: 10px;
+  height: 18px;
+  background: #444;
+  border: 1px solid #c5a059;
+  position: absolute;
+  right: 9px;
+  bottom: 0;
+  border-radius: 2px;
+}
+
+/* Müzik Bilgileri ve Kontroller */
+.player-info-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.track-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+@media (max-width: 768px) {
+  .track-header {
+    justify-content: center;
+    gap: 16px;
+  }
+}
+
+.live-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--primary-rose-light);
+  background: rgba(224, 102, 133, 0.12);
+  padding: 4px 12px;
+  border-radius: 30px;
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 8px #22c55e;
+}
+
+/* Dalga Ekolayzır */
+.soundwave {
+  display: flex;
+  align-items: flex-end;
+  gap: 3px;
+  height: 18px;
+}
+
+.soundwave span {
+  width: 3px;
+  height: 4px;
+  background: var(--primary-rose);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.soundwave.active span:nth-child(1) { animation: soundwaveAnim 0.7s ease infinite; }
+.soundwave.active span:nth-child(2) { animation: soundwaveAnim 0.5s ease infinite 0.1s; }
+.soundwave.active span:nth-child(3) { animation: soundwaveAnim 0.8s ease infinite 0.2s; }
+.soundwave.active span:nth-child(4) { animation: soundwaveAnim 0.6s ease infinite 0.3s; }
+.soundwave.active span:nth-child(5) { animation: soundwaveAnim 0.7s ease infinite 0.15s; }
+
+@keyframes soundwaveAnim {
+  0%, 100% { height: 4px; }
+  50% { height: 18px; }
+}
+
+.track-title {
+  font-family: var(--font-serif);
+  font-size: 1.55rem;
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+.track-artist {
+  font-size: 0.95rem;
+  color: var(--gold-accent);
+  margin-bottom: 12px;
+}
+
+.track-quote {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  font-style: italic;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  border-left: 2px solid rgba(224, 102, 133, 0.4);
+  padding-left: 14px;
+}
+
+@media (max-width: 768px) {
+  .track-quote {
+    border-left: none;
+    padding-left: 0;
+  }
+}
+
+/* Süre İlerleme Çubuğu */
+.progress-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.time-label {
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  font-variant-numeric: tabular-nums;
+  width: 36px;
+}
+
+.progress-bar-bg {
+  flex: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.progress-fill {
+  width: 0%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-rose), var(--gold-accent));
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+/* Oynatma Butonları ve Ses */
+.controls-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+@media (max-width: 768px) {
+  .controls-row {
+    justify-content: center;
+  }
+}
+
+.play-circle-btn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #e06685, #9b1d45);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1.3rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 18px rgba(224, 102, 133, 0.45);
+  transition: var(--transition-smooth);
+}
+
+.play-circle-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 6px 24px rgba(224, 102, 133, 0.65);
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.volume-icon {
+  font-size: 0.95rem;
+  color: var(--text-dim);
+}
+
+.volume-slider {
+  width: 120px;
+  height: 4px;
+  accent-color: var(--primary-rose);
+  cursor: pointer;
+}
+
+/* ==========================================================================
+   MEKTUP BÖLÜMÜ - 3D ZARF VE MÜHÜR
+   ========================================================================== */
+.envelope-container {
+  max-width: 520px;
+  margin: 20px auto 0;
+  cursor: pointer;
+  perspective: 1000px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.envelope-outer {
+  position: relative;
+  width: 380px;
+  height: 250px;
+  max-width: 100%;
+  background: #8b233a;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 5px 20px rgba(224, 102, 133, 0.2);
+  transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: visible;
+}
+
+@media (max-width: 480px) {
+  .envelope-outer {
+    width: 290px;
+    height: 190px;
+  }
+}
+
+@media (max-width: 350px) {
+  .envelope-outer {
+    width: 250px;
+    height: 165px;
+  }
+}
+
+.envelope-container:hover .envelope-outer {
+  transform: translateY(-8px) scale(1.03);
+  box-shadow: 0 32px 70px rgba(0, 0, 0, 0.8), 0 10px 30px rgba(224, 102, 133, 0.35);
+}
+
+/* Zarf Kapağı (Flap) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 0;
+  border-left: 190px solid transparent;
+  border-right: 190px solid transparent;
+  border-top: 130px solid #a32a45;
+  transform-origin: top;
+  transition: transform 0.6s ease;
+  z-index: 4;
+}
+
+@media (max-width: 480px) {
+  .envelope-flap {
+    border-left: 145px solid transparent;
+    border-right: 145px solid transparent;
+    border-top: 100px solid #a32a45;
+  }
+}
+
+@media (max-width: 350px) {
+  .envelope-flap {
+    border-left: 125px solid transparent;
+    border-right: 125px solid transparent;
+    border-top: 86px solid #a32a45;
+  }
+}
+
+.envelope-pocket {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #741b2f, #94253e);
+  clip-path: polygon(0 0, 50% 50%, 100% 0, 100% 100%, 0 100%);
+  border-radius: 0 0 12px 12px;
+  z-index: 3;
+}
+
+/* Zarfın İçinden Görünen Mektup Ucu */
+.letter-peek {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+  right: 30px;
+  height: 120px;
+  background: #fbf5e8;
+  border-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  z-index: 2;
+  transition: transform 0.5s ease;
+}
+
+.peek-text {
+  font-family: var(--font-calligraphy);
+  font-size: 1.5rem;
+  color: #633221;
+  font-weight: 700;
+  text-align: center;
+}
+
+.envelope-container:hover .letter-peek {
+  transform: translateY(-24px);
+}
+
+/* Balmumu Mühür (Wax Seal) */
+.wax-seal {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 35%, #e63956, #800e24);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5), inset 0 2px 4px rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+  transition: transform 0.3s ease;
+}
+
+@media (max-width: 480px) {
+  .wax-seal {
+    top: 72px;
+    width: 54px;
+    height: 54px;
+  }
+}
+
+@media (max-width: 350px) {
+  .wax-seal {
+    top: 60px;
+    width: 46px;
+    height: 46px;
+  }
+}
+
+.envelope-container:hover .wax-seal {
+  transform: translateX(-50%) scale(1.1);
+  box-shadow: 0 8px 24px rgba(230, 57, 86, 0.6);
+}
+
+.seal-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.seal-heart {
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+.seal-text {
+  font-size: 0.55rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #ffcad4;
+  margin-top: 2px;
+}
+
+.envelope-hint {
+  margin-top: 28px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--primary-rose-light);
+  font-weight: 500;
+}
+
+.hint-pulse {
+  animation: pulseBeat 1.8s infinite;
+}
+
+/* ==========================================================================
+   OTANTİK PARŞÖMEN MEKTUP MODAL (<dialog>)
+   ========================================================================== */
+.parchment-dialog {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: auto;
+  max-width: 820px;
+  width: 92%;
+  max-height: 90vh;
+  box-shadow: none;
+  overflow: visible;
+}
+
+.parchment-dialog::backdrop {
+  background: rgba(10, 3, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.dialog-scroll-wrapper {
+  max-height: 85vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px 10px;
+}
+
+/* Parşömen Kağıdı */
+.parchment-sheet {
+  position: relative;
+  background-color: #f7eee1;
+  background-image: url('letter-paper.jpg'), url('assets/letter-paper.jpg');
+  background-size: cover;
+  background-position: center;
+  color: #2b1d16;
+  padding: 56px 64px;
+  border-radius: 8px;
+  box-shadow: 
+    0 25px 70px rgba(0, 0, 0, 0.8),
+    0 0 0 1px rgba(160, 110, 60, 0.2),
+    inset 0 0 80px rgba(120, 70, 20, 0.15);
+  border: 1px solid rgba(138, 87, 45, 0.3);
+  font-family: var(--font-serif);
+  overflow: visible;
+}
+
+/* Kalp Yağmuru Efekti Parçacıkları */
+.romantic-heart-fx {
+  position: absolute;
+  pointer-events: none;
+  user-select: none;
+  z-index: 9999;
+  filter: drop-shadow(0 2px 8px rgba(224, 102, 133, 0.6));
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+.romantic-heart-fx-fixed {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  z-index: 999999;
+  filter: drop-shadow(0 2px 8px rgba(224, 102, 133, 0.6));
+  line-height: 1;
+  will-change: transform, opacity;
+}
+
+@media (max-width: 600px) {
+  .parchment-sheet {
+    padding: 36px 24px;
+  }
+}
+
+.dialog-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(80, 40, 20, 0.15);
+  border: 1px solid rgba(80, 40, 20, 0.25);
+  color: #4a2815;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-smooth);
+}
+
+.dialog-close-btn:hover {
+  background: #801032;
+  color: #fff;
+  border-color: #801032;
+  transform: rotate(90deg);
+}
+
+/* Posta Pulu & Başlık */
+.parchment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 30px;
+  border-bottom: 1px solid rgba(138, 87, 45, 0.25);
+  padding-bottom: 20px;
+}
+
+.postage-stamp {
+  border: 2px dashed #934c2b;
+  padding: 8px 14px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.stamp-heart {
+  font-size: 1.3rem;
+}
+
+.stamp-date {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #7b361a;
+  letter-spacing: 1px;
+}
+
+.letter-meta {
+  text-align: right;
+}
+
+.letter-destination {
+  display: block;
+  font-family: var(--font-calligraphy);
+  font-size: 1.8rem;
+  color: #8c2738;
+}
+
+.letter-postdate {
+  font-size: 0.85rem;
+  color: #7d5945;
+  font-style: italic;
+}
+
+.letter-salutation {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #63222d;
+  margin-bottom: 24px;
+}
+
+/* Mektup Metni */
+.letter-body {
+  font-size: 1.12rem;
+  line-height: 1.85;
+  color: #38241b;
+}
+
+.letter-body p {
+  margin-bottom: 18px;
+}
+
+.paragraph-dropcap::first-letter {
+  float: left;
+  font-family: var(--font-display);
+  font-size: 3.5rem;
+  line-height: 0.85;
+  padding-right: 12px;
+  padding-top: 4px;
+  color: #8c2738;
+}
+
+.letter-body strong {
+  color: #751a2d;
+  font-weight: 700;
+}
+
+.letter-highlight {
+  background: rgba(224, 102, 133, 0.12);
+  border-left: 3px solid #8c2738;
+  padding: 12px 18px;
+  border-radius: 0 8px 8px 0;
+  font-style: italic;
+  font-weight: 500;
+}
+
+/* İmza Alanı */
+.letter-signature-area {
+  margin-top: 36px;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.signature-date {
+  font-size: 0.9rem;
+  color: #7e5a47;
+  font-style: italic;
+}
+
+.signature-name {
+  font-family: var(--font-calligraphy);
+  font-size: 2.4rem;
+  color: #8c2738;
+  margin-top: 4px;
+}
+
+/* Butonlar & Aksiyonlar */
+.letter-actions {
+  margin-top: 36px;
+  display: flex;
+  justify-content: center;
+  border-top: 1px dashed rgba(138, 87, 45, 0.3);
+  padding-top: 24px;
+}
+
+.letter-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  background: #6e1c2e;
+  color: #fff;
+  border: 1px solid #8c2738;
+  border-radius: 50px;
+  font-family: var(--font-ui);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.letter-action-btn:hover {
+  background: #8c2738;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(140, 39, 56, 0.4);
+}
+
+/* ==========================================================================
+   FOOTER
+   ========================================================================== */
+.footer {
+  text-align: center;
+  padding: 60px 0 20px;
+  border-top: 1px solid rgba(255, 182, 193, 0.1);
+  margin-top: 60px;
+}
+
+.footer-heart {
+  font-family: var(--font-serif);
+  font-size: 1.25rem;
+  color: var(--text-main);
+  margin-bottom: 8px;
+}
+
+.footer-sub {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold-accent);
+}
+
+/* ==========================================================================
+   ANİMASYONLAR
+   ========================================================================== */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ==========================================================================
+   MOBİL VE TABLET UYUMLULUK OPTİMİZASYONU (RESPONSIVE FIXES)
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  /* Konteyner & Genel Boşluklar */
+  .container {
+    padding: 68px 16px 70px;
+    max-width: 100%;
+  }
+
+  .section {
+    padding: 60px 0 35px;
+  }
+
+  .section-header {
+    margin-bottom: 28px;
+  }
+
+  .section-tag {
+    font-size: 0.78rem;
+    letter-spacing: 1.5px;
+  }
+
+  .section-title {
+    font-size: clamp(1.8rem, 5.5vw, 2.4rem);
+    margin-bottom: 10px;
+  }
+
+  .section-desc {
+    font-size: 0.95rem;
+    padding: 0 4px;
+    line-height: 1.6;
+  }
+
+  /* Üst Sabit Hızlı Menü Butonları */
+  .quick-nav {
+    top: 12px;
+    right: 12px;
+    left: 12px;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .pill-btn {
+    padding: 8px 14px;
+    font-size: 0.8rem;
+    gap: 6px;
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+  }
+
+  /* Hero Başlık & Rozet */
+  .hero-section {
+    min-height: auto;
+    padding: 24px 0 24px;
+  }
+
+  .anniversary-badge {
+    font-size: 0.82rem;
+    letter-spacing: 1px;
+    padding: 6px 16px;
+    margin-bottom: 18px;
+  }
+
+  .hero-title {
+    font-size: clamp(2rem, 6.5vw, 2.8rem);
+    margin-bottom: 14px;
+  }
+
+  .hero-title .calligraphy {
+    font-size: clamp(2.8rem, 9vw, 4.2rem);
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 0.98rem;
+    margin-bottom: 28px;
+    padding: 0 8px;
+    line-height: 1.6;
+  }
+
+  /* Sayaç Kartı (Taşmaları Önleyen Esnek Düzen) */
+  .counter-card {
+    padding: 32px 16px 22px;
+    border-radius: var(--radius-lg);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
+  }
+
+  .heartbeat-pulse {
+    width: 48px;
+    height: 48px;
+    margin: -56px auto 14px;
+  }
+
+  .heart-svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .counter-caption {
+    font-size: 0.9rem;
+    margin-bottom: 18px;
+    padding: 0 4px;
+    line-height: 1.4;
+  }
+
+  .counter-grid {
+    gap: 6px;
+    margin-bottom: 22px;
+    width: 100%;
+  }
+
+  .counter-box {
+    min-width: 0;
+    flex: 1 1 0;
+    padding: 12px 4px;
+    border-radius: 12px;
+  }
+
+  .counter-box .number {
+    font-size: clamp(1.5rem, 5.2vw, 2.1rem);
+  }
+
+  .counter-box .unit {
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    margin-top: 5px;
+  }
+
+  .counter-colon {
+    font-size: 1.4rem;
+    margin: 0 -1px;
+  }
+
+  .counter-footer {
+    gap: 8px;
+    padding-top: 14px;
+  }
+
+  .stat-pill {
+    padding: 6px 13px;
+    font-size: 0.8rem;
+  }
+
+  .scroll-down-hint {
+    margin-top: 32px;
+  }
+
+  /* Müzik Çalar - Pikap & Plak */
+  .vinyl-player-card {
+    padding: 28px 18px;
+    gap: 24px;
+    border-radius: var(--radius-lg);
+  }
+
+  .turntable-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .vinyl-disc {
+    width: 180px;
+    height: 180px;
+  }
+
+  .vinyl-center {
+    width: 68px;
+    height: 68px;
+    border-width: 2px;
+  }
+
+  .vinyl-label-title {
+    font-size: 0.55rem;
+  }
+
+  .vinyl-label-sub {
+    font-size: 0.48rem;
+  }
+
+  .vinyl-heart {
+    font-size: 0.6rem;
+  }
+
+  .turntable-tonearm {
+    width: 34px;
+    height: 76px;
+    top: -6px;
+    right: -6px;
+    transform-origin: 25px 8px;
+  }
+
+  .tonearm-stick {
+    height: 62px;
+  }
+
+  .track-title {
+    font-size: 1.35rem;
+  }
+
+  .track-artist {
+    font-size: 0.88rem;
+    margin-bottom: 10px;
+  }
+
+  .track-quote {
+    font-size: 0.95rem;
+    margin-bottom: 18px;
+    padding: 0 4px;
+  }
+
+  .progress-container {
+    gap: 8px;
+    margin-bottom: 20px;
+  }
+
+  .time-label {
+    font-size: 0.75rem;
+    width: 32px;
+  }
+
+  .controls-row {
+    gap: 18px;
+  }
+
+  .play-circle-btn {
+    width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .volume-slider {
+    width: 95px;
+  }
+
+  /* Parşömen Mektup Modalı */
+  .parchment-dialog {
+    width: 94%;
+    max-height: 90vh;
+    max-height: 90dvh;
+  }
+
+  .dialog-scroll-wrapper {
+    max-height: 88vh;
+    max-height: 88dvh;
+    padding: 12px 6px;
+  }
+
+  .parchment-sheet {
+    padding: 36px 20px 28px;
+    border-radius: 8px;
+  }
+
+  .dialog-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 1.05rem;
+    z-index: 20;
+  }
+
+  .parchment-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+    margin-bottom: 22px;
+    padding-bottom: 16px;
+  }
+
+  .letter-meta {
+    text-align: center;
+  }
+
+  .letter-destination {
+    font-size: 1.6rem;
+  }
+
+  .letter-postdate {
+    font-size: 0.8rem;
+  }
+
+  .letter-salutation {
+    font-size: 1.3rem;
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .letter-body {
+    font-size: 0.98rem;
+    line-height: 1.75;
+  }
+
+  .letter-body p {
+    margin-bottom: 15px;
+  }
+
+  .paragraph-dropcap::first-letter {
+    font-size: 2.6rem;
+    padding-right: 8px;
+    padding-top: 2px;
+  }
+
+  .letter-highlight {
+    padding: 10px 14px;
+    font-size: 0.94rem;
+  }
+
+  .letter-signature-area {
+    margin-top: 26px;
+    text-align: center;
+    padding-right: 0;
+  }
+
+  .signature-name {
+    font-size: 2rem;
+  }
+
+  .letter-actions {
+    margin-top: 26px;
+    padding-top: 20px;
+  }
+
+  /* Footer */
+  .footer {
+    padding: 40px 0 20px;
+    margin-top: 40px;
+  }
+
+  .footer-heart {
+    font-size: 1.1rem;
+  }
+
+  .footer-sub {
+    font-size: 0.78rem;
+  }
+}
+
+/* Küçük Ekranlı Telefonlar (iPhone SE, Galaxy A serisi vb. <= 400px) */
+@media (max-width: 400px) {
+  .container {
+    padding: 62px 12px 60px;
+  }
+
+  .quick-nav {
+    gap: 6px;
+  }
+
+  .pill-btn {
+    padding: 7px 10px;
+    font-size: 0.74rem;
+  }
+
+  .counter-card {
+    padding: 26px 10px 18px;
+  }
+
+  .counter-box {
+    padding: 10px 2px;
+  }
+
+  .counter-box .number {
+    font-size: 1.35rem;
+  }
+
+  .counter-box .unit {
+    font-size: 0.58rem;
+    letter-spacing: 0.5px;
+  }
+
+  .counter-colon {
+    font-size: 1.15rem;
+  }
+
+  .stat-pill {
+    padding: 5px 10px;
+    font-size: 0.74rem;
+  }
+
+  .turntable-wrapper,
+  .vinyl-disc {
+    width: 155px;
+    height: 155px;
+  }
+
+  .vinyl-center {
+    width: 58px;
+    height: 58px;
+  }
+
+  .parchment-sheet {
+    padding: 30px 14px 22px;
+  }
+
+  .letter-destination {
+    font-size: 1.4rem;
+  }
+
+  .letter-salutation {
+    font-size: 1.15rem;
+  }
+
+  .letter-body {
+    font-size: 0.92rem;
+  }
+
+  .signature-name {
+    font-size: 1.7rem;
+  }
+}

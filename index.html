@@ -1,0 +1,508 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>2. Ayımız Kutlu Olsun Sevgilim ❤️ | 8 Eylül 2026</title>
+    <meta
+      name="description"
+      content="8 Eylül 2026'dan beri atan kalbimiz... 2. ay dönümümüz kutlu olsun sevgilim."
+    />
+
+    <!-- Google Fonts: Romantic Serif, Script & Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&family=Great+Vibes&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Arka Plan Kalp Parçacıkları Animasyonu -->
+    <canvas id="heartCanvas"></canvas>
+
+    <!-- Hızlı Gezinme & Aksiyon Butonları -->
+    <div class="quick-nav">
+      <button
+        id="quickMusicBtn"
+        class="pill-btn"
+        title="Müziği Başlat / Durdur"
+      >
+        <span class="icon">🎵</span>
+        <span class="btn-text">Bizim Şarkımız</span>
+      </button>
+      <button
+        id="heartRainBtn"
+        class="pill-btn pill-btn-primary"
+        title="Kalp Yağmuru Başlat"
+      >
+        <span class="icon">💖</span>
+        <span class="btn-text">Seni Seviyorum</span>
+      </button>
+    </div>
+
+    <main class="container">
+      <!-- HERO & CANLI AŞK SAYACI BÖLÜMÜ -->
+      <header class="hero-section">
+        <div class="anniversary-badge">
+          <span class="sparkle">✨</span> 2. Ay Dönümümüz Kutlu Olsun
+          <span class="sparkle">✨</span>
+        </div>
+
+        <h1 class="hero-title">
+          <span class="calligraphy">Sonsuzluğumun</span>
+          <span class="highlight">Başladığı Gün</span>
+        </h1>
+
+        <p class="hero-subtitle">
+          8 Eylül 2026'da ellerimiz ilk kez kenetlendiğinde, zaman benim için
+          seninle akmaya başladı...
+        </p>
+
+        <!-- 8 Eylül 2026'dan Beri Canlı Sayaç Kartı -->
+        <section
+          class="counter-card"
+          id="loveCounterSection"
+          aria-label="Aşk Sayacı"
+        >
+          <div class="heartbeat-pulse">
+            <svg class="heart-svg" viewBox="0 0 32 32">
+              <path
+                d="M16 28.5C16 28.5 3 20.5 3 11.5C3 6.5 7 2.5 12 2.5C14.5 2.5 15.5 4 16 5C16.5 4 17.5 2.5 20 2.5C25 2.5 29 6.5 29 11.5C29 20.5 16 28.5 16 28.5Z"
+                fill="currentColor"
+              />
+            </svg>
+          </div>
+
+          <div class="counter-caption">
+            <span>8 Eylül 2026'dan beri geçen her an seninle güzel:</span>
+          </div>
+
+          <div class="counter-grid">
+            <div class="counter-box">
+              <span class="number" id="countDays">00</span>
+              <span class="unit">GÜN</span>
+            </div>
+            <div class="counter-colon">:</div>
+            <div class="counter-box">
+              <span class="number" id="countHours">00</span>
+              <span class="unit">SAAT</span>
+            </div>
+            <div class="counter-colon">:</div>
+            <div class="counter-box">
+              <span class="number" id="countMinutes">00</span>
+              <span class="unit">DAKİKA</span>
+            </div>
+            <div class="counter-colon">:</div>
+            <div class="counter-box">
+              <span class="number" id="countSeconds">00</span>
+              <span class="unit">SANİYE</span>
+            </div>
+          </div>
+
+          <div class="counter-footer">
+            <div class="stat-pill">
+              <span class="stat-icon">💫</span>
+              <span id="totalHoursStat">0 saat</span> aşkla
+            </div>
+            <div class="stat-pill">
+              <span class="stat-icon">🌹</span>
+              <span id="totalSecondsStat">0 saniye</span> atan kalp
+            </div>
+            <div class="stat-pill highlight-pill">
+              <span class="stat-icon">💍</span>
+              <span>2. Ayımız</span>
+            </div>
+          </div>
+        </section>
+
+        <div class="scroll-down-hint">
+          <span>Aşağı Kaydır</span>
+          <div class="mouse-icon">
+            <div class="wheel"></div>
+          </div>
+        </div>
+      </header>
+
+      <!-- BÖLÜM 1: BİZİM KÖŞEMİZ (6 FOTOĞRAF KUTUSU) -->
+      <section class="section photo-corner-section" id="bizim-kosemiz">
+        <div class="section-header">
+          <span class="section-tag">Anılarımız & Hatıralarımız</span>
+          <h2 class="section-title">Bizim Köşemiz</h2>
+          <p class="section-desc">
+            Birlikte gülümsediğimiz, gözlerimizin konuştuğu ve kalbimizin bir
+            attığı en güzel anlarımız...
+          </p>
+        </div>
+
+        <!-- 
+        6 FOTOĞRAF KUTUSU ALTYAPISI:
+        Aşağıdaki kutucukların "src" kısmına kendi fotoğraflarınızın dosya yolunu yazabilirsiniz.
+        Örnek: images/foto1.jpg, images/foto2.jpg vb.
+      -->
+        <div class="photo-grid">
+          <!-- 1. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="1.jpeg"
+                alt="Bizim Fotoğrafımız 1"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1518199266791-5375a83190b7?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+
+          <!-- 2. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="2.jpeg"
+                alt="Bizim Fotoğrafımız 2"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+
+          <!-- 3. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="5.jpeg"
+                alt="Bizim Fotoğrafımız 3"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+
+          <!-- 4. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="4.jpeg"
+                alt="Bizim Fotoğrafımız 4"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1529333166437-7750a6dd5a70?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+
+          <!-- 5. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="6.jpeg"
+                alt="Bizim Fotoğrafımız 5"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+
+          <!-- 6. Fotoğraf Kutusu -->
+          <article class="photo-card">
+            <div class="photo-frame">
+              <img
+                src="3.jpeg"
+                alt="Bizim Fotoğrafımız 6"
+                class="gallery-photo"
+                onerror="
+                  this.onerror = null;
+                  this.src =
+                    'https://images.unsplash.com/photo-1494774157365-9e04c6720e47?w=800&auto=format&fit=crop&q=80';
+                "
+              />
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- BÖLÜM 2: BİZİM ŞARKIMIZ -->
+      <section class="section music-section" id="bizim-sarkimiz">
+        <div class="section-header">
+          <span class="section-tag">Melodimiz</span>
+          <h2 class="section-title">Bizim Şarkımız</h2>
+          <p class="section-desc">
+            Bu melodi her çaldığında kalbimde sadece senin sıcaklığın
+            yankılanıyor...
+          </p>
+        </div>
+
+        <!-- 
+        ŞARKI ALTYAPISI:
+        Aşağıdaki audio etiketinin src kısmına kendi mp3 şarkınızın yolunu yazabilirsiniz.
+        Örnek: assets/bizim-sarkimiz.mp3
+      -->
+        <audio id="romanticAudio" src="34.mp3" preload="metadata"></audio>
+
+        <div class="vinyl-player-card">
+          <!-- Dönen Pikap ve Plak -->
+          <div class="turntable-wrapper">
+            <div class="vinyl-disc" id="vinylDisc">
+              <div class="vinyl-grooves"></div>
+              <div class="vinyl-center">
+                <div class="vinyl-label">
+                  <span class="vinyl-label-title">Bizim Şarkımız</span>
+                  <span class="vinyl-label-sub">8 Eylül 2026</span>
+                  <span class="vinyl-heart">❤️</span>
+                </div>
+              </div>
+            </div>
+            <div class="turntable-tonearm" id="toneArm">
+              <div class="tonearm-base"></div>
+              <div class="tonearm-stick"></div>
+              <div class="tonearm-head"></div>
+            </div>
+          </div>
+
+          <!-- Oynatıcı Kontrolleri ve Bilgisi -->
+          <div class="player-info-wrapper">
+            <div class="track-header">
+              <span class="live-pill" id="musicStatusPill">
+                <span class="live-dot"></span> Hazır
+              </span>
+              <span class="soundwave" id="soundWave">
+                <span></span><span></span><span></span><span></span
+                ><span></span>
+              </span>
+            </div>
+
+            <h3 class="track-title" id="trackTitleDisplay">
+              Bizim Özel Şarkımız
+            </h3>
+            <p class="track-artist" id="trackArtistDisplay">
+              8 Eylül 2026 &mdash; Sonsuza Dek
+            </p>
+
+            <p class="track-quote">
+              “Gözlerini kapattığında duyduğun bu melodi, sana olan sevgimin
+              notalara dökülmüş hali sevgilim...”
+            </p>
+
+            <!-- İlerleme Çubuğu -->
+            <div class="progress-container">
+              <span class="time-label" id="currentTimeLabel">0:00</span>
+              <div class="progress-bar-bg" id="progressBarBg">
+                <div class="progress-fill" id="progressFill"></div>
+              </div>
+              <span class="time-label" id="durationTimeLabel">3:30</span>
+            </div>
+
+            <!-- Oynat & Ses Kontrolleri -->
+            <div class="controls-row">
+              <button
+                class="music-btn play-circle-btn"
+                id="mainPlayBtn"
+                title="Oynat / Duraklat"
+                aria-label="Oynat / Duraklat"
+              >
+                <span class="play-icon" id="playIcon">▶</span>
+              </button>
+
+              <div class="volume-container">
+                <span class="volume-icon">🔊</span>
+                <input
+                  type="range"
+                  id="volumeSlider"
+                  min="0"
+                  max="1"
+                  step="0.05"
+                  value="0.75"
+                  class="volume-slider"
+                  aria-label="Ses Seviyesi"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BÖLÜM 3: MEKTUP (TIKLANABİLİR ZARF & PARŞÖMEN MEKTUP) -->
+      <section class="section letter-section" id="mektup">
+        <div class="section-header">
+          <span class="section-tag">Yüreğimden Dökülenler</span>
+          <h2 class="section-title">Sana Bir Mektubum Var</h2>
+          <p class="section-desc">
+            Kelimeler sana olan aşkımı anlatmaya yetmez belki ama kalbimin
+            sesini buraya fısıldadım... Mektubu açmak için mühre dokun.
+          </p>
+        </div>
+
+        <!-- Tıklanabilir 3D Zarfi ve Balmumu Mührü -->
+        <div
+          class="envelope-container"
+          id="envelopeTrigger"
+          role="button"
+          tabindex="0"
+          aria-label="Aşk Mektubunu Aç"
+        >
+          <div class="envelope-outer">
+            <div class="envelope-flap"></div>
+            <div class="envelope-pocket">
+              <div class="letter-peek">
+                <span class="peek-text">2. Ayımız Kutlu Olsun Birtanem...</span>
+              </div>
+            </div>
+            <!-- Balmumu Mühür -->
+            <div class="wax-seal">
+              <div class="seal-inner">
+                <span class="seal-heart">❤️</span>
+                <span class="seal-text">AŞKLA</span>
+              </div>
+            </div>
+          </div>
+          <div class="envelope-hint">
+            <span class="hint-pulse">💌</span>
+            <span class="hint-text">Mektubu okumak için zarfa tıkla</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- ALT BİLGİ -->
+      <footer class="footer">
+        <p class="footer-heart">
+          Seninle geçen her gün bir ömre bedel... <span>❤️</span>
+        </p>
+        <p class="footer-sub">8 Eylül 2026 — Sonsuza Dek Biz</p>
+      </footer>
+    </main>
+
+    <!-- PARŞÖMEN KAĞITLI AŞK MEKTUBU MODALI (<dialog>) -->
+    <dialog
+      class="parchment-dialog"
+      id="letterDialog"
+      aria-labelledby="dialogTitle"
+    >
+      <div class="dialog-scroll-wrapper">
+        <article class="parchment-sheet">
+          <!-- Kapatma Butonu -->
+          <button
+            class="dialog-close-btn"
+            id="closeLetterBtn"
+            aria-label="Kapat"
+          >
+            ✕
+          </button>
+
+          <!-- Antika Posta Pulu & Başlık -->
+          <div class="parchment-header">
+            <div class="postage-stamp">
+              <span class="stamp-heart">💖</span>
+              <span class="stamp-date">08.09.2026</span>
+            </div>
+            <div class="letter-meta">
+              <span class="letter-destination">Canımın İçi, Sevgilime...</span>
+              <span class="letter-postdate"
+                >8 Eylül 2026 &mdash; 2. Ay Dönümümüz</span
+              >
+            </div>
+          </div>
+
+          <h3 class="letter-salutation" id="dialogTitle">
+            Benim Güzel Yüzlüm, Dünyalar Güzeli Sevgilim,
+          </h3>
+
+          <!-- Mektup İçeriği (Güzelliği, Kalbi, Gözleri, Bana Olan Sevgisi ve Benim Ona Sevgim) -->
+          <div class="letter-body">
+            <p class="paragraph-dropcap">
+              Takvimler 8 Eylül 2026’yı gösterdiğinde, kaderimin en güzel
+              sayfasını seninle yazmaya başladım. Bugün tam 2 ay oldu
+              sevgilim... İki koca ay, ama bana sanki göz açıp kapayıncaya kadar
+              geçen rüya gibi bir masal; aynı zamanda ömrüm boyunca seni
+              beklemişim gibi huzurlu ve derin bir duygu.
+            </p>
+
+            <p>
+              İlk önce o dünyalara sığmayan
+              <strong>güzelliğinden</strong> bahsetmek istiyorum... Sana her
+              baktığımda, Tanrı'nın yeryüzüne özenle gönderdiği en zarif
+              mucizeyi görüyorum. Yüzünün o narin hatları, içimi eriten
+              gülümsemen, saçlarının rüzgarda salınışı... Sen sadece gözlerimi
+              kamaştıran bir güzellik değil, baktığım her yerde dünyayı
+              güzelleştiren bir ışıksın.
+            </p>
+
+            <p>
+              Ve o <strong>gözlerin</strong>... Ah o gözlerin sevgilim...
+              Dünyanın bütün telaşını, bütün yorgunluğunu unutturan tek
+              sığınağım. İçinde kaybolmaktan asla korkmadığım, baktıkça daha çok
+              aşık olduğum, bana hayat veren bir çift yıldız sanki. Gözlerinin
+              içine her baktığımda kalbimin nasıl deli gibi çarptığını, ruhumun
+              nasıl huzurla dolduğunu bilsen...
+            </p>
+
+            <p>
+              Peki ya o pamuk gibi, merhamet ve şefkat dolu
+              <strong>kalbin</strong>? Öyle temiz, öyle naif bir yüreğin var ki,
+              bana sadece sevgili olmayı değil, sevilmenin ne kadar yüce bir
+              hediye olduğunu öğrettin. Dünyadaki en savunmasız, en masum
+              sevgiyi senin o sıcacık kalbinde buldum. İyiliğin, içtenliğin ve o
+              tertemiz ruhun beni sana her saniye yeniden bağlıyor.
+            </p>
+
+            <p>
+              <strong>Bana olan sevgin...</strong> Bana öyle bir bakıyorsun,
+              beni öyle değerli hissettiriyorsun ki sevgilim, kendimi dünyanın
+              en şanslı erkeği sayıyorum. Bir kelimenden, bir dokunuşundan,
+              varlığından akan o sevgi benim en büyük gücüm, en güzel sığınağım
+              oldu.
+            </p>
+
+            <p>
+              Ve <strong>benim sana olan sevgim</strong>... Bunu anlatmaya
+              hiçbir dilin gücü yetmez biriciğim. Seni sadece bugün değil, nefes
+              aldığım her an, kalbimin her atışında, dünden daha büyük bir
+              tutkuyla, yarından bile daha derin bir sadakatle seviyorum. 8
+              Eylül'de başlayan bu güzel hikayeyi, ömrümün sonuna kadar senin
+              elini bırakmadan sürdürmek benim hayattaki en büyük arzum.
+            </p>
+
+            <p class="letter-highlight">
+              İyi ki hayatımdasın, iyi ki kalbime dokundun, iyi ki benim
+              sevgilim oldun. 2. ayımız kutlu olsun bir tanem. Nice 2. aylara,
+              nice yıllara, sonsuza dek el ele... Seni her şeyden çok ama çok
+              seviyorum.
+            </p>
+          </div>
+
+          <div class="letter-signature-area">
+            <div class="signature-date">8 Eylül 2026'dan Sonsuzluğa</div>
+            <div class="signature-name">Seni Çok Seven Sevgilin ❤️</div>
+          </div>
+
+          <div class="letter-actions">
+            <button type="button" class="letter-action-btn" id="celebrateBtn">
+              💖 Kalp Yağdır
+            </button>
+          </div>
+        </article>
+      </div>
+    </dialog>
+
+    <script src="app.js"></script>
+  </body>
+</html>
